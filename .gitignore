@@ -1,5 +1,6 @@
-build/
+.vscode
 .cache/
+build/
 cmake-build-debug/
 cmake-release-debug/
 test.cpp

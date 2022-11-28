@@ -19,7 +19,7 @@ namespace {
         bnode *right;
     };
 
-    std::vector<bnode *> btree_construct() {
+    std::vector<bnode *> bin_tree_construct() {
         using pairs = std::tuple<std::string, double>;
         std::vector<pairs> symbol_prob_pairs{
                 {"a", 0.1},
@@ -54,7 +54,7 @@ namespace {
 }
 
 void bin_tree_test(){
-    auto nodes = btree_construct();
+    auto nodes = bin_tree_construct();
     auto broot = nodes[0];
     auto graph = koala::tree2graph(broot,
                                    [](bnode *n) {return koala::char_box{n->str};},
