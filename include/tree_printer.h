@@ -163,7 +163,7 @@ namespace koala {
      * @return The char_box, containing the graph of the binary tree.   
      */
     template<typename T>
-    char_box btree2graph(T* root,
+    char_box bin_tree2graph(T* root,
                          typename identity<std::function<char_box(T*)>>::type get_char_box,
                          typename identity<std::function<T*(T*)>>::type get_left,
                          typename identity<std::function<T*(T*)>>::type get_right
@@ -190,12 +190,12 @@ namespace koala {
      * @return The char_box, containing the graph of the binary tree.   
      */
     template<typename T>
-    char_box btree2graph(T* root,
+    char_box bin_tree2graph(T* root,
                          typename identity<std::function<std::string(T*)>>::type get_str,
                          typename identity<std::function<T*(T*)>>::type get_left,
                          typename identity<std::function<T*(T*)>>::type get_right
     ){
-        return btree2graph(root, [&get_str](T* root){return char_box{get_str(root)};},
+        return bin_tree2graph(root, [&get_str](T* root){return char_box{get_str(root)};},
                            get_left, get_right);
     }
 

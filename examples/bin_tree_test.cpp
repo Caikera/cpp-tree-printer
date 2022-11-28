@@ -69,14 +69,14 @@ void bin_tree_test(){
     );
     graph.print();
 
-    auto graph2 = koala::btree2graph(broot,
+    auto graph2 = koala::bin_tree2graph(broot,
                                      [](bnode* n){return koala::char_box{n->str};},
                                      [](bnode* n){return n->left;},
                                      [](bnode* n){return n->right;}
     );
     graph2.print();
 
-    auto graph3 = koala::btree2graph(broot,
+    auto graph3 = koala::bin_tree2graph(broot,
                                      [](bnode *n){return '|' + n->str + '|';},
                                      [](bnode *root){return root->left;},
                                      [](bnode *root){return root->right;}
@@ -88,7 +88,7 @@ void bin_tree_test(){
     };
     auto get_left = [](bnode* root){ return root->left; };
     auto get_right = [](bnode* root){ return root->right; };
-    auto graph4 = koala::btree2graph(broot, get_str, get_left, get_right);
+    auto graph4 = koala::bin_tree2graph(broot, get_str, get_left, get_right);
     graph4.print();
 
     btree_deconstruct(nodes);
