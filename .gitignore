@@ -1,0 +1,5 @@
+build/
+.cache/
+cmake-build-debug/
+cmake-release-debug/
+test.cpp
